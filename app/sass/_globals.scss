@@ -1,0 +1,141 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.2;
+    font-family: $fontFamilyOverpass;
+    font-size: $fontSizeMedium;
+    font-weight: 300;
+    color: $veryDarkBlue;
+
+    @include breakpoint-up(large) {
+        font-size: $fontSizeLarge;
+    }
+}
+
+h1, h2, h3 {
+    text-align: left;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+    color: $white;
+}
+
+button, .button {
+    width: 138px;
+    height: 48px;
+    color: $lightRed;
+    background-color: $white;
+    border-radius: 50px;
+    text-align: center;
+    font-family: $fontFamilyUbuntu;
+    font-size: $fontSizeLarge;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 
+        transform 250ms ease-in-out,
+        color 250ms ease-in-out,
+        background-color 250ms ease-in-out;        ;
+
+        &:hover {
+            // scale: 1.2;
+            transform: scale(1.05);
+            transition: all 250ms ease-in-out;
+            color: $white;
+            // background-color: rgba($veryLightRed, 0.4);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+}
+
+
+// FLEXBOX
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+// SPACING
+.container {
+    margin: 0px;
+
+
+
+    &--padding-y {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        
+        @include breakpoint-up(large) {
+            padding-top: 65px;
+            padding-bottom: 65px;
+        }
+    }
+
+    &--padding-x {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        @include breakpoint-up(medium) {
+            padding-left: 82px;
+            padding-right: 82px;
+        }
+        @include breakpoint-up(large) {
+            padding-left: 8rem;
+            padding-right: 8rem;
+        }
+    }
+
+    &--padding-all {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        @include breakpoint-up(medium) {
+            padding-top: 100px;
+            padding-right: 82px;
+            padding-bottom: 100px;
+            padding-left: 82px;
+        }
+        
+        @include breakpoint-up(large) {
+            padding-top: 65px;
+            padding-right: 8rem;
+            padding-bottom: 65px;
+            padding-left: 8rem;
+        }
+    }
+}
+
+// VISIBILITY
+
+// hides for mobile & tablet devices
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+// hides for desktop widths & up
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}

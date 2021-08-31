@@ -3,47 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/dist/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap" rel="stylesheet">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
   
-  <title>Frontend Mentor | [Blogr]</title>
+  <title>Home</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-  Product
+  <header class="header">
+    <nav class="container--padding-all flex flex-ai-c">
+      <a href="#" class="header__logo">GLUE</a>
 
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
+      <a href="#" id="btnHamburger" class="header__toggle hide-for-desktop">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
 
-  Company
+      <div class="header__links hide-for-mobile">
+        <a href="#" id="linkProduct">Product</a>
+        <a href="#" id="linkCompany">Company</a>
+        <a href="#" id="linkConnect">Connect</a>
+      </div>
+      
+      <div id="menuProduct" class="header__menu product has-fade">
+        <a href="#" >Overview</a>
+        <a href="#" >Pricing</a>
+        <a href="#" >Marketplace</a>
+        <a href="#" >Features</a>
+      </div>
 
-  About
-  Team
-  Blog
-  Careers
+      <div id="menuCompany" class="header__menu company has-fade">
+        <a href="#" >About</a>
+        <a href="#" >Team</a>
+        <a href="#" >Blog</a>
+        <a href="#" >Careers</a>
+      </div>
 
-  Connect
+      <div id="menuConnect" class="header__menu connect has-fade">
+        <a href="#" >Contact</a>
+        <a href="#" >Newsletter</a>
+        <a href="#" >LinkedIn</a>
+      </div>
 
-  Contact
-  Newsletter
-  LinkedIn
-  
-  Login
-  Sign Up
+      <div class="header__user-links hide-for-mobile">
+        <a href="#" class="header__login">Login</a>
+        
+        <button type="button" class="button header__btn">Sign Up</button>
+      </div>
+    </nav>
 
-  A modern publishing platform
-  Grow your audience and build your online brand
+    <div class="header__content container--padding-x">
+      <div class="header__text">
+        <h1>A modern publishing platform</h1>
+        <h3>Grow your audience and build your online brand</h3>
+      </div>
 
-  Start for Free
-  Learn More
+      <div class="header__buttons">
+        <button type="button" class="button header__btn-1">Start for Free</button>
+        <button type="button" class="button header__btn-2">Learn More</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 
 
   Designed for the future
 
@@ -89,11 +116,8 @@
   
   Contact
   Newsletter
-  LinkedIn
+  LinkedIn -->
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<script src="/app/js/main.js"></script>
 </body>
 </html>
