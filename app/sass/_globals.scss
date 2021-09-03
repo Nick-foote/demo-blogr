@@ -78,7 +78,27 @@ button, .button {
 .container {
     margin: 0px;
 
+    &--padding-right {
+        padding-right: 30px;
 
+        @include breakpoint-up(medium) {
+            padding-right: 82px;
+        }
+        @include breakpoint-up(large) {
+            padding-right: 8rem;
+        }
+    }
+
+    &--padding-left {
+        padding-left: 30px;
+
+        @include breakpoint-up(medium) {
+            padding-left: 82px;
+        }
+        @include breakpoint-up(large) {
+            padding-left: 8rem;
+        }
+    }
 
     &--padding-y {
         padding-top: 100px;

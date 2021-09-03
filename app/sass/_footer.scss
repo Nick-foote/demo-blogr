@@ -1,0 +1,75 @@
+.footer {
+    background-color: $veryDarkBlackBlue;
+    height: 360px;
+    border-top-right-radius: 125px;
+
+    &__container {
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 1fr;
+            // grid-template-areas: 
+            //     "logo links-1 links-2 links-3";
+            justify-items: start;
+            justify-content: start;
+            padding: 70px 160px;
+            height: 100%;
+        }
+    }
+
+    &__company-wrapper {
+        @include breakpoint-up(large) {
+            flex: 1;
+            width: 100%;
+}
+    }
+    &__logo {
+        background-image: url('/images/logo.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        @include breakpoint-up(large) {
+            height: 45px;
+            width: 135px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__copyright {
+        color: $grayishBlue;
+        @include breakpoint-up(large) {
+            font-size: 16px;
+            align-self: flex-end;
+        }
+    }
+    
+    &__content {   
+        @include breakpoint-up(large) {
+            flex: 1;            
+        }
+    }
+
+    &__title {
+        @include breakpoint-up(large) {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__links {
+
+        a {
+            display: block;
+            color: $grayishBlue;
+            @include breakpoint-up(large) {
+                font-size: 15px;
+                line-height: 2.25;
+            }
+
+            &:hover {
+                color: $white;
+            }
+        }
+    }   
+}

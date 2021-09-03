@@ -1,0 +1,117 @@
+.intro {
+    background-color: $offWhite;
+    height: 1200px;
+    @include breakpoint-up(large) {
+        height: 1000px;
+    }
+
+    &__heading  {
+        position: relative;
+        margin-top: 105px;
+        margin-bottom: 50px;
+
+        @include breakpoint-up(large) {
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+        h2{ 
+            position: relative;
+            text-align: center;
+            font-weight: 600;
+            font-size: 28px;
+            
+            @include breakpoint-up(large) {
+                top: 110px;
+                margin: 0;
+                font-size: 36px;
+                font-weight: 600;
+            }
+        }
+    }    
+
+    &__container {
+        height: 400px;
+        width: 100%;
+        
+        @include breakpoint-up(large) {
+            display: flex;
+            align-items: center;
+            height: 880px;
+            padding-top: 70px;
+            padding-right: 0px;
+            padding-bottom: 56px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        width: 100%;
+        padding-right: 30px;
+        padding-left: 30px;
+
+        @include breakpoint-up(large) {
+            flex: 1;
+            order: 1;
+            padding-right: 130px;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 1.15;
+
+            @include breakpoint-up(large) {
+                font-size: 24px;
+                font-weight: 600;
+                color: $veryDarkBlue;
+                text-align: left;
+            }
+
+        }
+
+        p {
+            text-align: center;
+            line-height: 1.7;
+            color: $veryDarkGrayishBlue;
+            font-size: 16px;
+
+            @include breakpoint-up(large) {
+                font-size: 18px;
+                text-align: left;
+                line-height: 1.6;
+            }
+        }
+
+         .row-1 {
+            margin-bottom: 40px;
+             @include breakpoint-up(large) {
+                margin-bottom: 80px;
+             }
+         }
+    }
+
+    &__image {
+        position: relative;
+        background-image: url('/images/illustration-editor-mobile.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 320px;
+        background-position: 80% center;
+
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 40px;
+        }
+        @include breakpoint-up(large) {
+            background-image: url('/images/illustration-editor-desktop.svg');           
+            flex: 1;
+            order: 2;
+            height: 880px;
+            background-position: 10% center;
+        }
+    }
+
+
+
+}

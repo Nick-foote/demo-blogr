@@ -9,29 +9,40 @@ const menuProduct = document.querySelector("#menuProduct")
 const menuCompany = document.querySelector("#menuCompany")
 const menuConnect = document.querySelector("#menuConnect")
 
-const headerMenus = document.querySelectorAll(".header__menu")
+const headerMenus = document.querySelectorAll(".header__menu-link")
 
+const fadeElements = document.querySelectorAll(".has-fade")
 
 
 btnHamburger.addEventListener('click', () => {
-    // closing menu
+    // Closing Hamburger menu
     if (header.classList.contains("open")) {
         header.classList.remove("open")
-        console.log("Closing")
+        fadeElements.forEach( (element) => {
+            element.classList.replace("fade-in", "fade-out")
+
+            // element.classList.add("has-fade")
+        })
     } 
-    // Opening menu
+    // Opening Hamburger menu
     else {
         header.classList.add("open")
-        console.log("Opening")
+        fadeElements.forEach( (element) => {
+            element.classList.remove("has-fade")
+
+            element.classList.remove("fade-out")
+            element.classList.add("fade-in")
+        })
     }    
 })
 
 
 function addListeners(item) {
+    // Opening menu
     if(item.classList.contains("has-fade")) {
         item.classList.remove("has-fade")
     }
-    // closing menu
+    // Closing menu
     else {
         item.classList.add("has-fade")
     }
@@ -49,51 +60,11 @@ linkConnect.addEventListener('click', function(e) {
     addListeners(menuConnect)
 })
 
-
-// linkProduct.addEventListener('click', function(e) {
-//     addListeners(menuProduct)
-//     // console.log("listening")
-//     // // opening menu
-//     // if (menuProduct.classList.contains("has-fade")) {
-//     //     menuProduct.classList.remove("has-fade")
-//     // }
-//     // // closing menu
-//     // else {
-//     //     menuProduct.classList.add("has-fade")
-//     // }
-// })
-
-// linkCompany.addEventListener('click', function(e) {
-//     console.log("listening")
-//     // opening menu
-//     if (menuCompany.classList.contains("has-fade")) {
-//         menuCompany.classList.remove("has-fade")
-//     }
-//     // closing menu
-//     else {
-//         menuCompany.classList.add("has-fade")
-//     }
-// })
-
-// linkConnect.addEventListener('click', function(e) {
-//     console.log("listening")
-//     // opening menu
-//     if (menuConnect.classList.contains("has-fade")) {
-//         menuConnect.classList.remove("has-fade")
-//     }
-//     // closing menu
-//     else {
-//         menuConnect.classList.add("has-fade")
-//     }
-// })
-
-
+// TODO: update so event listeners are only active when menu is open
 
 document.addEventListener('mouseup', function(event) {
-    // if(event.target != menuProduct && event.target.parentNode != menuProduct) {
     if(event.target != (menuProduct || menuCompany || menuConnect) ) {
         console.log("clicked outside of area")
-
         menuProduct.classList.add("has-fade")
         menuCompany.classList.add("has-fade")
         menuConnect.classList.add("has-fade")

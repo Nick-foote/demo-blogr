@@ -1,12 +1,39 @@
 .header {
-    background: linear-gradient(to right, $veryLightRed, $lightRed);
+    background: linear-gradient(to bottom right, $veryLightRed, $lightRed);
     color: $white;
     height: 600px;
+    width: 100vw;
     border-bottom-left-radius: 100px;
+    // z-index: -20;
+
 
     @include breakpoint-up(medium) {
         height: 600px;
+        background: linear-gradient(to right, $veryLightRed, $lightRed);
         border-bottom-left-radius: 125px;
+    }
+
+    &__bg_image_container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        // background-color: turquoise;
+        background-color: transparent;
+        border-bottom-left-radius: 100px;
+    }
+    &__image {
+        position: absolute;
+        width: 3200px;
+        top: -1350px;
+        left: -425px;
+        z-index: 1;
+        
+        @include breakpoint-down(small) {
+            width: 1300px;
+            top: -220px;
+            left: -350px;
+        }
     }
 
 
@@ -18,6 +45,9 @@
         // border: rgba(255, 241, 241, 0.406) solid 1px;
         font-weight: 700;
         font-family: $fontFamilyUbuntu;
+        align-items: center;
+
+        z-index: 5;
 
         @include breakpoint-up(medium) {
             padding-bottom: 58px;
@@ -43,37 +73,37 @@
     // HAMBURGER FEATURE - start
 
     &.open {
-        // .overlay {}
-        .header__toogle {
-            opacity: 0;
+        // .overlay {
+        // display: block;}
+        .header__toggle {
             span {
                 transition: transform 250ms ease-in-out;
-
                 &:first-child {
                     transform: rotate(45deg);                    
+                }
+                &:last-child {
+                    transform: rotate(-45deg);
                 }
                 &:nth-child(2) {
                     opacity: 0;
                 }
-            }
-            span:last-child {
-                transform: rotate(-45deg);
             }
         }
     }
 
     &__toggle {
         height: 40px;
+        margin-bottom: 0px;
         margin-left: auto;
-        margin-top: auto;
-        // margin-bottom: auto;
+        padding-top: 5px;
 
         span {
             display: block;
             background-color: $white;
-            width: 60px;
+            width: 40px;
             height: 4px;
             transition: transform 300ms ease-in-out;
+            transform-origin: 0px 1px;
 
             &:not(:last-child) {
                 margin-bottom: 10px;
@@ -82,7 +112,7 @@
 
     }
 
-    &__menu {
+    &__menu-link {
         position: absolute;
         display: flex;
         justify-content: space-evenly;
@@ -125,10 +155,78 @@
             // margin-left: 130px;
         }
     }
-
-
     // HAMBURGER FEATURE - end
 
+
+    // MAIN MENU - start
+
+    &__menu-main-container {
+        position: absolute;
+        // border: 3px solid red;
+        top: 158px;
+        left: 0px;
+        right: 0px;
+        height: 510px;
+        // width: auto;
+        margin: 0px 82px;
+        background: $white;
+        border-radius: 10px;
+        overflow: visible;
+        z-index: 20;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 3;
+        opacity: 1;
+
+        a {
+            display: block;
+            position: relative;
+            color: $veryDarkBlue;
+            text-align: center;
+
+            // &::after {
+            //     content: "";
+            //     display: inline;
+            //     position: absolute;
+            //     top: 9px;
+            //     right: 0px;
+            //     bottom: 0px;
+            //     // left: 0px;
+            //     // margin-left: 10px;
+
+            //     height: 10px;
+            //     width: 15px;
+            //     background-image: url('/images/icon-arrow-dark.svg');
+            //     background-repeat: no-repeat;
+            //     background-size: 60%;
+            //     // background-size: 100%;
+            // }
+        }
+
+        a .has-arrow {
+            height: 10px;
+            width: 15px;
+            background-image: url('/images/icon-arrow-dark.svg');
+        }
+
+        // .text-with-arrow{
+        //     position: relative;
+        //     display: block;
+        // }        
+    }
+
+    &__menu-main__divider {
+        position: relative;
+        display: block;
+        height: 2px;
+        background-color: $lightGray;
+        width: auto;
+        margin-right: 24px;
+        margin-left: 24px;
+    }
+
+    // MAIN MENU - end
+    
 
 
     &__links {
@@ -205,6 +303,8 @@
     } 
     
     &__content {
+        position: relative;
+        z-index: 10;
 
     }
     &__text {
@@ -217,6 +317,7 @@
             margin-top: 0px;
             padding-top: 0px;
             text-align: center;
+            // color: red;
         }
         
         h1 {
@@ -254,6 +355,7 @@
     &__btn-1, &__btn-2 {
         font-weight: 500;
         font-size: 16px;
+        
         @include breakpoint-up(large) {
             font-size: 18px;
         }
